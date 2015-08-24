@@ -20,14 +20,15 @@ Given(/^there are no venues near "(.*?)"$/) do |address|
 end
 
 When(/^I view the list of venues$/) do
-  @list_of_venues = Venues::ListRetriever.execute
+  @list_of_venues = Venues::ListRetriever.execute(venue_repository: Venue)
 end
 
 Then(/^I should see the following message "(.*?)"$/) do |msg|
   expect(@list_of_venues.message).to eql msg
 end
 
-Then(/^I should see the following information for venues:$/) do |table|
-  # table is a Cucumber::Ast::Table
-  pending # express the regexp above with the code you wish you had
+Then(/^I should see the following information for venues:$/) do |branches_info|
+  branches_info.hashes.each_with_index do |branch_info, idx|
+    expect(branch_info.symbolize_keys).to eql @list_of_venues[idx].to_h
+  end
 end

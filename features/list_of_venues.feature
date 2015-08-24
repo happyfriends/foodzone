@@ -17,5 +17,5 @@ Feature: List of Venues
       | Near place, #08, The Hood | 555-555-5555 |
     When I view the list of venues
     Then I should see the following information for venues:
-      | name             | address                   | telephone   |
-      | The Burguer Shop | Near place, #08, The Hood | 555-555-555 |
+      | name             | address                   | telephone    |
+      | The Burguer Shop | Near place, #08, The Hood | 555-555-5555 |

@@ -13,5 +13,9 @@ module Venues
       @number = number
       @hood = hood
     end
+
+    def to_s
+      [street, number, hood].join(', ')
+    end
   end
 end
