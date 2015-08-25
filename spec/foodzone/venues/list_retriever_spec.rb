@@ -14,8 +14,8 @@ describe Venues::ListRetriever do
       end
 
       it "returns the proper message" do
-        expect(retriever.execute(venue_repository: venue_repo).message)
-          .to eql "There are no venues covering that address"
+        expect(retriever.execute(venue_repository: venue_repo).message).to
+        eql "There are no venues covering that address"
       end
     end
 
@@ -37,7 +37,7 @@ describe Venues::ListRetriever do
       it "returns a list of venues" do
         expect(
           retriever.execute(venue_repository: venue_repo).to_a.map(&:to_h)
-        ).to eql [{name: "", address: "My place, #20, Hood", telephone: ""}]
+        ).to eql [{ name: "", address: "My place, #20, Hood", telephone: "" }]
       end
     end
   end
