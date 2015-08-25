@@ -21,9 +21,11 @@ describe Venues::ListRetriever do
 
     context "for some venues" do
       let(:branch) do
-        double :branch,
+        double(
+          :branch,
           address: Venues::Address.from_str("My place, #20, Hood").to_s,
           telephone: Venues::Telephone.from_str('').to_s
+        )
       end
       let(:branches) { [branch] }
       let(:venue) { double :venue, name: "", branches: branches }
