@@ -6,7 +6,7 @@ describe Venues::Creator do
 
   describe "::execute" do
     let(:name) { "The Burguer Shop" }
-    it 'creates a new venue' do
+    it "creates a new venue" do
       expect(venue_repository).to receive(:save_venue).with(name)
       creator.execute(venue_repository: venue_repository, venue_name: name)
     end
