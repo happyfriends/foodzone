@@ -6,6 +6,9 @@ gem 'rake'
 gem 'lotusrb',       '0.4.1'
 gem 'lotus-model',   '~> 0.4'
 
+group :development do
+  gem 'pry'
+end
 
 group :test do
   gem 'cucumber'
